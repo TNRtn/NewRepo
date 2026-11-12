@@ -29,6 +29,10 @@ builder.Services.AddScoped<Categories>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+var port = Environment.GetEnvironmentVariable("PORT") ?? "10000";
+
+builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
+
 // 6. CORS Configuration
 builder.Services.AddCors(options =>
 {
