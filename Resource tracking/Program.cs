@@ -21,6 +21,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // Register Services
 builder.Services.AddScoped<Categories>();
+builder.Services.AddScoped<ResourcesService>();
+builder.Services.AddScoped<projectService>();
+builder.Services.AddScoped<MenuService>();
 
 // Swagger
 builder.Services.AddEndpointsApiExplorer();

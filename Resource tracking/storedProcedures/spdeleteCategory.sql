@@ -4,13 +4,14 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE dbo.speleteCategory
+CREATE PROCEDURE dbo.spdeleteCategory
 (
     @Id INT
 )
 AS
 BEGIN
     SET NOCOUNT ON;
+	
 
     IF NOT EXISTS
     (

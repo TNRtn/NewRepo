@@ -2,8 +2,11 @@
 {
     public class Category_Result_params
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public int? Id { get; set; }
+        public string? Name { get; set; }
         
+    }
+    public class Category_Add_Input { 
+        public string Name {  set; get; } = string.Empty;
     }
 }

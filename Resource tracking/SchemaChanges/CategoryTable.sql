@@ -7,3 +7,4 @@ CREATE TABLE Category
     IsActive BIT
 );
 END
+

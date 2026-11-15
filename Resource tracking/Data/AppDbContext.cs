@@ -8,5 +8,7 @@ namespace Resource_tracking.Data
         public AppDbContext(DbContextOptions opt) : base(opt) { }
 
         public DbSet<Category_Result_params> Category { get; set; }
+        public DbSet<Resources_params_Result> Resources { get; set; }
+        public DbSet<Project_params> Project { get; set; }
     }
 }
