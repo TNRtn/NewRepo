@@ -1,7 +1,8 @@
 
 using Microsoft.EntityFrameworkCore;
-using Resource_tracking.Services;
 using Resource_tracking.Data;
+using Resource_tracking.Models;
+using Resource_tracking.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,7 +25,9 @@ builder.Services.AddScoped<Categories>();
 builder.Services.AddScoped<ResourcesService>();
 builder.Services.AddScoped<projectService>();
 builder.Services.AddScoped<MenuService>();
-
+builder.Services.AddScoped<TimeperiodService>();
+builder.Services.AddScoped<DashBoardservice>();
+builder.Services.AddScoped<HealthService>();
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -32,10 +35,10 @@ builder.Services.AddSwaggerGen();
 // CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAngular", policy =>
+    options.AddPolicy("AllowAll", policy =>
     {
         policy
-            .WithOrigins("http://localhost:4200")
+            .AllowAnyOrigin()
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
@@ -49,7 +52,7 @@ app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
-app.UseCors("AllowAngular");
+app.UseCors("AllowAll");
 
 app.UseAuthorization();
 

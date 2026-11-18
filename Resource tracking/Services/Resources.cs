@@ -39,8 +39,7 @@ namespace Resource_tracking.Services
         {
             try
             {
-                Console.WriteLine(JsonSerializer.Serialize(inputdata));
-                cs.Database.ExecuteSqlRaw("EXEC spAddResource @p0, @p1, @p2, @p3, @p4, @p5, @p6",inputdata.Id, inputdata.Name, inputdata.Description, inputdata.CategoryId, inputdata.ReferenceKeys, inputdata.ReferenceNoteLinks, inputdata.KeyPoints);
+                cs.Database.ExecuteSqlRaw("EXEC spAddResource @p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7",inputdata.Id, inputdata.Name, inputdata.Description, inputdata.CategoryId, inputdata.ReferenceKeys, inputdata.ReferenceNoteLinks, inputdata.KeyPoints,inputdata.RevisionCount);
             }
             catch (Exception ex)
             {

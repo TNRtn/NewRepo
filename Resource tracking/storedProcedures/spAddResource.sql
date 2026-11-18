@@ -11,7 +11,8 @@ CREATE PROCEDURE dbo.spAddResource
     @CategoryId INT,
     @ReferenceKeys NVARCHAR(MAX) = NULL,
     @ReferenceNoteLinks NVARCHAR(MAX) = NULL,
-    @KeyPoints NVARCHAR(MAX) = NULL
+    @KeyPoints NVARCHAR(MAX) = NULL,
+	@revisionCount INT = NULL
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -54,6 +55,7 @@ BEGIN
 		ReferenceKeys = @ReferenceKeys,
 		ReferenceNoteLinks = @ReferenceNoteLinks,
 		KeyPoints = @KeyPoints,
+		RevisionCount = @revisionCount,
 		ModifiedDate = GETDATE()
 		WHERE ID= @Id
 		SELECT @Id AS Id;

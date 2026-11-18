@@ -33,5 +33,7 @@
         public string? ReferenceKeys { get; set; }
         public string? ReferenceNoteLinks { get; set; }
         public string? KeyPoints { get; set; }
+
+        public int RevisionCount { get; set; } = 0;
     }
 }
