@@ -28,6 +28,7 @@ builder.Services.AddScoped<MenuService>();
 builder.Services.AddScoped<TimeperiodService>();
 builder.Services.AddScoped<DashBoardservice>();
 builder.Services.AddScoped<HealthService>();
+builder.Services.AddScoped<TargetService>();
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

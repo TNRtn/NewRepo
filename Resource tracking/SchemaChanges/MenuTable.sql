@@ -69,3 +69,6 @@ VALUES
     1,
     0
 );
+
+INSERT INTO MENU 
+VALUES('AdditionalSkills','/upsc/targets',1,1,0)
