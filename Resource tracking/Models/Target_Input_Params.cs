@@ -23,6 +23,11 @@
 
         public bool IsActive { get; set; }
 
+        public bool IsCompleted { get; set; }
+        public DateTime? CompletedDate { get; set; }
+        public int Score { get; set; }
+
+
         public DateTime CreatedDate { get; set; }
     }
 

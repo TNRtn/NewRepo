@@ -60,5 +60,21 @@ namespace Resource_tracking.Services
                     $"Error adding UPSC target: {ex.Message}", ex);
             }
         }
+
+        public void CompleteUPSCTarget(int id)
+        {
+            try
+            {
+                var result = cs.Database.SqlQueryRaw<Target_Result>(
+                    "EXEC dbo.spCompleteUPSCTarget @Id = {0}",
+                    id
+                ).ToList();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error completing UPSC target: {ex.Message}", ex);
+            }
+        }
     }
 }

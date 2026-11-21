@@ -64,5 +64,24 @@ namespace Resource_tracking.Controllers
 
             return result;
         }
+
+        [HttpPut("{id}/Complete")]
+        public Operational_Result<string> CompleteUPSCTarget(int id)
+        {
+            var result = new Operational_Result<string>();
+            try
+            {
+                hs.CompleteUPSCTarget(id);
+                result.IsSuccess = true;
+                result.Message = "UPSC target updated successfylly.";
+
+            }
+            catch (Exception ex) { 
+                result.IsSuccess = false;
+                result.Message = "Error occurred while updating UPSC target.";
+                result.Error = ex.Message;
+            }
+            return result;
+        }
     }
 }

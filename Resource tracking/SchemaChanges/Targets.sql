@@ -27,3 +27,22 @@ BEGIN
 
 END;
 GO
+
+ALTER TABLE dbo.Targets
+ADD CONSTRAINT CK_Targets_IsActive
+CHECK (IsActive = 0 OR TargetDate >= CAST(GETDATE() AS DATE));
+
+ALTER TABLE dbo.Targets
+ADD
+    IsCompleted BIT NOT NULL DEFAULT 0,
+    CompletedDate DATE NULL;
+
+ALTER TABLE dbo.Targets
+ADD Score AS
+(
+    CASE
+        WHEN IsCompleted = 0 OR CompletedDate IS NULL THEN 0
+        ELSE 10 + DATEDIFF(DAY, CompletedDate, TargetDate)
+    END
+);
+

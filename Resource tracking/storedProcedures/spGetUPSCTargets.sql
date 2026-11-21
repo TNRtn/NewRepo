@@ -18,6 +18,9 @@ BEGIN
         StartDate,
         TargetDate,
         IsActive,
+        IsCompleted,
+        CompletedDate,
+        Score,
         CreatedDate
     FROM dbo.Targets
     WHERE
